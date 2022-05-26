@@ -20,9 +20,9 @@
 // });
 
 // METHOD 2:
-document.querySelector('#load-image-btn').addEventListener('click', async function () {
-    let artwork = await axios.get('artwork.json');
-    artwork = artwork.data;
+document.querySelector('#load-image-btn').addEventListener('click', async ()=> {
+    let response = await axios.get('artwork.json');
+    let artwork = response.data;
 
     // Create <h1> element
     let h1 = document.createElement('h1');
@@ -33,7 +33,7 @@ document.querySelector('#load-image-btn').addEventListener('click', async functi
     img.src = artwork.image_url;
     img.className = artwork.class;
 
-    // Select div
+    // Select div #artwork
     let div = document.querySelector('#artwork');
     div.appendChild(h1);
     div.appendChild(img);
