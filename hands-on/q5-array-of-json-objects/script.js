@@ -47,3 +47,7 @@ document.querySelector('#btnSearch').addEventListener('click', async function() 
 // 1. An object {}
 // 2. An array of objects [{}, {}]
 // 3. An object of arrays of objects (like in this question)
+
+// ctrl + r -> to force reload if browser is caching your javascript (so latest javascript is not used)
+
+// Refactoring using functions to make code more readable
