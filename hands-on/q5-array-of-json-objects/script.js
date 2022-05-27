@@ -1,7 +1,7 @@
 document.querySelector('#load-users-btn').addEventListener('click', async function() {
     // Load users
-    let users = await axios.get('users.json');
-    users = users.data.users;
+    let response = await axios.get('users.json');
+    let users = response.data.users;
 
     // Create a <ul> element
     let ul = document.createElement('ul');
@@ -23,8 +23,8 @@ document.querySelector('#load-users-btn').addEventListener('click', async functi
 
 document.querySelector('#btnSearch').addEventListener('click', async function() {
     // Get users 
-    let users = await axios.get('users.json');
-    users = users.data.users;
+    let response = await axios.get('users.json');
+    let users = response.data.users;
 
     // Get user id in search box
     let userId = document.querySelector('#searchBox').value;
@@ -42,3 +42,8 @@ document.querySelector('#btnSearch').addEventListener('click', async function() 
     // Update search results in div #all-users
     document.querySelector('#all-users').innerHTML = results;
 });
+
+// NOTE: 3 TYPICAL FORMS FOR JSON FORMAT
+// 1. An object {}
+// 2. An array of objects [{}, {}]
+// 3. An object of arrays of objects (like in this question)
